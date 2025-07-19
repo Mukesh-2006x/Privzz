@@ -1,11 +1,13 @@
 // vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: '0.0.0.0', // This makes it accessible from other devices
-    port: 5173,       // Default port (you can change if needed)
+  preview: {
+    port: 4173,          // Optional: default port for Vite preview
+    host: true,          // Allow external access
+    allowedHosts: ['privzz-1.onrender.com'],  // ✅ Allow Render domain
   },
-})
+});
